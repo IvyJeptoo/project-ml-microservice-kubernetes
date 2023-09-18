@@ -5,14 +5,14 @@
 
 # Step 1:
 # Create dockerpath
-dockerpath=ivyudacitymicroservice
+dockerpath=jeptoo/ivyudacitymicroservice:latest
 
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
-docker login --username jeptoo
-docker tag ivyudacitymicroservice jeptoo/ivyudacitymicroservice:latest
+docker login 
+docker tag ivyudacitymicroservice:latest $dockerpath
 
 
 # Step 3:
-docker push jeptoo/ivyudacitymicroservice:latest
+docker push $dockerpath
