@@ -1,0 +1,22 @@
+[Terminal 1]
+(.venv) voclabs~/environment/project-ml-microservice-kubernetes$ ./run_kubernetes.sh 
+deployment.apps/ivyudacitymicroservice created
+NAME                      READY   STATUS              RESTARTS   AGE
+ivyudacitymicroservice-5796b76dc4-nn8l6   0/1     ContainerCreating   0          0s
+error: unable to forward port because pod is not running. Current status=Pending
+(.venv) voclabs~/environment/project-ml-microservice-kubernetes$  ./run_kubernetes.sh 
+Error from server (AlreadyExists): deployments.apps "ml-api" already exists
+NAME                      READY   STATUS    RESTARTS   AGE
+ivyudacitymicroservice-5796b76dc4-nn8l6   1/1     Running   0          7m40s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+
+[Terminal 2]
+(.venv) voclabs~/environment/project-ml-microservice-kubernetes$ ./make_prediction.sh 
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
