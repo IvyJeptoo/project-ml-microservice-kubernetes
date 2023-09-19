@@ -28,4 +28,10 @@ lint:
 	# This should be run from inside a virtualenv
 	pylint --disable=R,C,W1203,W1202 app.py
 
+install-hadolint:
+	# Download and install Hadolint
+	wget -O hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
+	chmod +x hadolint
+	mv hadolint ~/.local/bin
+
 all: install lint test
